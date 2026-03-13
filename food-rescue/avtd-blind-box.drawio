@@ -11,31 +11,31 @@
           <mxGeometry height="2097" width="1023" x="20" y="423" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-3" parent="1" style="whiteSpace=wrap;strokeWidth=2;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;fontSize=22;" value="Khách hàng (Hunter)" vertex="1">
-          <mxGeometry height="2573" width="330" x="1413" y="77" as="geometry" />
+          <mxGeometry height="2573" width="447" x="1413" y="77" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-4" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Bắt đầu" vertex="1">
-          <mxGeometry height="72" width="72" x="1542" y="127" as="geometry" />
+          <mxGeometry height="72" width="72" x="1600" y="110" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-5" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Chọn mua Hộp mù trên App" vertex="1">
-          <mxGeometry height="54" width="259" x="1448" y="249" as="geometry" />
+          <mxGeometry height="54" width="259" x="1506.5" y="232" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Xác nhận Giờ Pick-up &amp; Giá" vertex="1">
-          <mxGeometry height="54" width="258" x="1449" y="353" as="geometry" />
+          <mxGeometry height="54" width="258" x="1507" y="336" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Bấm nút &#39;Thanh toán&#39;" vertex="1">
-          <mxGeometry height="54" width="211" x="1472" y="457" as="geometry" />
+          <mxGeometry height="54" width="211" x="1530.5" y="440" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-8" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Nhận thông báo Lỗi &amp; Trở về trang chủ" vertex="1">
-          <mxGeometry height="78" width="260" x="1448" y="1880" as="geometry" />
+          <mxGeometry height="78" width="260" x="1574" y="1880" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-9" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Xác thực sinh trắc học trên MoMo" vertex="1">
-          <mxGeometry height="78" width="260" x="1448" y="1283" as="geometry" />
+          <mxGeometry height="78" width="260" x="1506.5" y="1283" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-10" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Nhận QR Code (E-Ticket) &amp; Đi lấy hàng" vertex="1">
           <mxGeometry height="78" width="260" x="1448" y="2299" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-11" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Kết thúc" vertex="1">
-          <mxGeometry height="77" width="77" x="1539" y="2529" as="geometry" />
+          <mxGeometry height="77" width="77" x="1598" y="2529" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-12" parent="1" style="rhombus;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Kiểm tra tồn kho (Stock &gt; 0?)" vertex="1">
           <mxGeometry height="278" width="278" x="511" y="446" as="geometry" />
@@ -236,6 +236,15 @@
               <mxPoint x="180" y="2460" />
               <mxPoint x="1590" y="2480" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9XSuz_5MqGPFBXbn69Sz-56" edge="1" parent="1" source="9XSuz_5MqGPFBXbn69Sz-8" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontSize=20;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="9XSuz_5MqGPFBXbn69Sz-11" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1850" y="2420" />
+            </Array>
+            <mxPoint x="1680" y="2020" as="sourcePoint" />
+            <mxPoint x="2560" y="2109" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
