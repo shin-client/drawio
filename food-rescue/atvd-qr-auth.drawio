@@ -1,17 +1,17 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
   <diagram name="Page-1" id="j3M_o3o_JVvrX9eyzU9a">
-    <mxGraphModel dx="1426" dy="1954" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2377" dy="2477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=22;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" value="Food Rescue System" vertex="1">
-          <mxGeometry height="1177" width="959" x="692" y="888" as="geometry" />
+          <mxGeometry height="1177" width="959" x="692" y="858" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=22;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" value="Chủ quán (Partner)" vertex="1">
-          <mxGeometry height="2113" width="652" x="20" y="233" as="geometry" />
+          <mxGeometry height="2067" width="652" x="20" y="233" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-3" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=22;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" value="Khách hàng (Hunter)" vertex="1">
-          <mxGeometry height="2490" width="330" x="1671" y="20" as="geometry" />
+          <mxGeometry height="2430" width="330" x="1671" y="20" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-4" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Bắt đầu" vertex="1">
           <mxGeometry height="72" width="72" x="1800" y="45" as="geometry" />
@@ -23,10 +23,10 @@
           <mxGeometry height="54" width="256" x="1708" y="680" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Nhận thông báo: &#39;Chúc ngon miệng&#39;" vertex="1">
-          <mxGeometry height="78" width="260" x="1706" y="2243" as="geometry" />
+          <mxGeometry height="78" width="260" x="1706" y="2191" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-8" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Kết thúc" vertex="1">
-          <mxGeometry height="77" width="77" x="1798" y="2396" as="geometry" />
+          <mxGeometry height="77" width="77" x="1798" y="2344" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-9" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Mở màn hình Xác thực đơn hàng" vertex="1">
           <mxGeometry height="78" width="260" x="363" y="258" as="geometry" />
@@ -41,37 +41,37 @@
           <mxGeometry height="54" width="221" x="55" y="784" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-13" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Nhận cảnh báo đỏ: &#39;Lỗi xác thực&#39; &amp; Từ chối giao" vertex="1">
-          <mxGeometry height="78" width="260" x="281" y="1885" as="geometry" />
+          <mxGeometry height="78" width="260" x="281" y="1839" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-14" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Nhận thông báo xanh: &#39;Xác thực thành công&#39;" vertex="1">
-          <mxGeometry height="78" width="260" x="116" y="2115" as="geometry" />
+          <mxGeometry height="78" width="260" x="116" y="2069" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-15" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Giao Hộp mù cho Khách hàng" vertex="1">
-          <mxGeometry height="78" width="260" x="116" y="2243" as="geometry" />
+          <mxGeometry height="78" width="260" x="116" y="2197" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-16" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Giải mã Token &amp; Gửi Request lên Server" vertex="1">
-          <mxGeometry height="78" width="260" x="1041" y="913" as="geometry" />
+          <mxGeometry height="78" width="260" x="1041" y="883" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-17" parent="1" style="rhombus;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Token hợp lệ &amp; Tồn tại trong DB?" vertex="1">
-          <mxGeometry height="278" width="278" x="1032" y="1041" as="geometry" />
+          <mxGeometry height="278" width="278" x="1032" y="1011" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-18" parent="1" style="rhombus;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="Trạng thái đơn hàng == PAID?" vertex="1">
-          <mxGeometry height="278" width="278" x="1187" y="1393" as="geometry" />
+          <mxGeometry height="278" width="278" x="1187" y="1363" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-19" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Báo lỗi: Mã QR giả mạo / Không tồn tại" vertex="1">
-          <mxGeometry height="78" width="260" x="731" y="1745" as="geometry" />
+          <mxGeometry height="78" width="260" x="731" y="1715" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-20" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Báo lỗi: Mã đã được sử dụng (Replay Attack)" vertex="1">
-          <mxGeometry height="78" width="260" x="1041" y="1745" as="geometry" />
+          <mxGeometry height="78" width="260" x="1041" y="1715" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-21" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Cập nhật Đơn hàng: COMPLETED" vertex="1">
-          <mxGeometry height="78" width="260" x="1351" y="1745" as="geometry" />
+          <mxGeometry height="78" width="260" x="1351" y="1715" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-22" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Quyết toán: Cộng tiền vào Ví khả dụng (Partner Wallet)" vertex="1">
-          <mxGeometry height="102" width="260" x="1351" y="1873" as="geometry" />
+          <mxGeometry height="102" width="260" x="1351" y="1843" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-23" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;fontSize=20;" value="" vertex="1">
-          <mxGeometry height="15" width="15" x="1474" y="2025" as="geometry" />
+          <mxGeometry height="15" width="15" x="1474" y="1995" as="geometry" />
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-24" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-4" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-5" value="">
           <mxGeometry relative="1" as="geometry">
@@ -104,7 +104,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="vJFH5PsE5DVCxRK-a4GF-29" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-12" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.4;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-16" value="">
+        <mxCell id="vJFH5PsE5DVCxRK-a4GF-29" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-12" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.5;rounded=0;fontSize=20;entryDx=0;entryDy=0;" target="vJFH5PsE5DVCxRK-a4GF-16" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="165" y="908" />
@@ -133,7 +133,7 @@
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-33" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-17" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.78;entryX=0.5;entryY=0;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-19" value="Sai (Fake QR)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="861" y="1356" />
+              <mxPoint x="861" y="1326" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -147,18 +147,18 @@
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-35" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-17" style="curved=1;startArrow=none;endArrow=block;exitX=0.94;exitY=1;entryX=0.5;entryY=0;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-18" value="Đúng">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1326" y="1356" />
+              <mxPoint x="1326" y="1326" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-36" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-18" style="curved=1;startArrow=none;endArrow=block;exitX=0.06;exitY=1;entryX=0.5;entryY=0;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-20" value="Sai (Đã dùng rồi)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1171" y="1708" />
+              <mxPoint x="1171" y="1678" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="vJFH5PsE5DVCxRK-a4GF-37" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-20" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.33;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-13" value="">
+        <mxCell id="vJFH5PsE5DVCxRK-a4GF-37" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-20" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;rounded=0;fontSize=20;entryDx=0;entryDy=0;" target="vJFH5PsE5DVCxRK-a4GF-13" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1171" y="1848" />
@@ -168,7 +168,7 @@
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-38" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-18" style="curved=1;startArrow=none;endArrow=block;exitX=0.94;exitY=1;entryX=0.5;entryY=0;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-21" value="Đúng (PAID)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1481" y="1708" />
+              <mxPoint x="1481" y="1678" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -186,7 +186,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1340" y="2090" />
-              <mxPoint x="280" y="2078" />
+              <mxPoint x="270" y="2040" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -206,7 +206,7 @@
         <mxCell id="vJFH5PsE5DVCxRK-a4GF-44" edge="1" parent="1" source="vJFH5PsE5DVCxRK-a4GF-15" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.12;rounded=0;fontSize=20;" target="vJFH5PsE5DVCxRK-a4GF-8" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="250" y="2371" />
+              <mxPoint x="270" y="2350" />
               <mxPoint x="1753" y="2371" />
             </Array>
           </mxGeometry>
@@ -220,7 +220,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="550" y="2298" />
-              <mxPoint x="1918" y="2371" />
+              <mxPoint x="1940" y="2320" />
             </Array>
           </mxGeometry>
         </mxCell>
