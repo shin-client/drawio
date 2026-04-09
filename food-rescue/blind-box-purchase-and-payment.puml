@@ -1,0 +1,130 @@
+@startuml
+!theme plain
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 150
+autonumber "<b>[00]"
+
+actor       "Hunter" as hunter
+participant "Mobile App\n(Frontend)"    as app
+box "Food Rescue System"
+    participant "API Gateway\n(Controller)" as api
+    participant "Order Service\n(Business Logic)" as order
+    database    "Database\n(Transactions)" as db
+    participant "CronJob Worker\n(Background)"         as cron
+end box
+participant "MoMo/ZaloPay\n(Payment Gateway)" as momo
+
+== 1. Init Order & Hold Inventory (Pessimistic/Optimistic Lock) ==
+
+hunter -> app : Click "Xác nhận & Thanh toán" Hộp mù
+activate app
+app -> api : POST /api/v1/orders (productId, storeId, quantity=1)
+activate api
+
+api -> order : createOrderRequest()
+activate order
+
+' Transaction start
+order -> db : BEGIN TRANSACTION
+activate db
+order -> db : SELECT stock FROM Products WHERE id = X FOR UPDATE
+note right: Lock record to prevent Race Condition & Overselling. Space: O(1)
+
+alt Stock > 0 (Còn hàng)
+    order -> db : UPDATE Products SET stock = stock - 1 (Hold Inventory)
+    order -> db : INSERT Order (status='PENDING', expiresAt=NOW + 10m)
+    order -> db : COMMIT
+    order --> api : Order Created (orderId)
+    
+    api -> momo : POST /create-payment-link (Amount, OrderID, IPN_Url)
+    activate momo
+    momo --> api : Returns payUrl & checkoutToken
+    deactivate momo
+    
+    api --> app : 200 OK (payUrl)
+    app --> hunter : Redirect to MoMo App for Biometric Auth
+else Stock == 0 (Hết hàng đột xuất)
+    order -> db : ROLLBACK
+    order --> api : Exception: Out of stock
+    api --> app : 400 Bad Request
+    app --> hunter : Show Alert: "Hộp mù cuối cùng đã được giải cứu!"
+end
+deactivate db
+deactivate order
+deactivate api
+deactivate app
+
+== 2. Payment Processing & Edge Cases (Alternative Flows) ==
+
+par Async Webhook Flow (Success)
+    note over momo, api: Server-to-Server Communication
+    momo -> api : POST IPN Webhook (Signature, ResultCode=0)
+    activate api
+    api -> order : verifySignature(payload) -> processPayment()
+    activate order
+    
+    order -> db : SELECT Order WHERE id = X
+    activate db
+    alt Order Status == 'PENDING'
+        order -> db : UPDATE Order SET status='PAID'
+        note right: Stock already held in Step 1. No need to deduct again.
+        
+        order -> order : generateQRCodeToken(orderId)
+        order -> db : UPDATE Order SET qrToken = 'hash_string...'
+        
+        order --> api : Payment Success
+        api --> momo : 200 OK (Acknowledge Webhook)
+        
+        api -> app : Push Notification (FCM/Socket)
+        activate app
+        app --> hunter : Hiển thị Order QR Code (E-Ticket)
+        deactivate app
+        
+        api -> app : Push Notification to Partner: "Có đơn mới!"
+    else Order Already Processed (Idempotency check)
+        order --> api : Ignore duplicate Webhook
+        api --> momo : 200 OK
+    end
+    deactivate db
+    deactivate order
+    deactivate api
+    
+else User Cancellation Flow (Manual Abort)
+    hunter -> momo : Click "Hủy giao dịch / Quay lại"
+    momo --> app : Redirect DeepLink (ResultCode=1006)
+    activate app
+    app -> api : PUT /api/v1/orders/:id/cancel
+    activate api
+    api -> order : cancelOrder()
+    activate order
+    
+    order -> db : UPDATE Order SET status='CANCELLED'
+    activate db
+    order -> db : UPDATE Products SET stock = stock + 1 (Rollback Inventory)
+    note right: Release held stock immediately so others can buy
+    deactivate db
+    
+    order --> api : Cancelled
+    api --> app : 200 OK
+    app --> hunter : Redirect to Store Page
+    deactivate order
+    deactivate api
+    deactivate app
+    
+else Timeout Flow (User Drops Off - Auto Resolve)
+    loop Every 1 Minute
+        cron -> db : SELECT PENDING Orders WHERE expiresAt < NOW()
+        note right: DB Index required on (status, expiresAt) for O(log N) lookup
+        activate cron
+        activate db
+        loop For each expired order
+            cron -> db : UPDATE Order SET status='CANCELLED'
+            cron -> db : UPDATE Products SET stock = stock + 1 (Rollback)
+            note right: Prevent inventory deadlocks if Webhook fails or user hangs
+        end
+        deactivate db
+        deactivate cron
+    end
+end
+
+@enduml
