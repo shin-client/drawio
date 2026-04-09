@@ -1,0 +1,103 @@
+@startuml
+!theme plain
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 150
+autonumber "<b>[00]"
+
+actor "Hunter\n(Sinh viên)" as hunter
+actor "Partner\n(Chủ quán)" as partner
+actor "Admin\n(Quản trị viên)" as admin
+
+box "Food Rescue System (Backend)"
+    participant "API Gateway" as api
+    participant "Dispute Service" as svc
+    database "Database" as db
+    participant "Timeout Worker\n(CronJob)" as cron
+end box
+
+participant "Payment Gateway\n(MoMo/ZaloPay)" as gw
+
+== 1. Initiate Dispute & Freeze Wallet ==
+
+hunter -> api : POST /api/v1/disputes (orderId, reason, evidenceUrl)
+activate api
+api -> svc : openDispute()
+activate svc
+
+' Tác vụ Transaction để đảm bảo tính toàn vẹn
+svc -> db : BEGIN TRANSACTION
+activate db
+svc -> db : UPDATE Orders SET status='DISPUTED'
+note right: Khóa trạng thái đơn hàng. Space: O(1)
+
+svc -> db : UPDATE PartnerWallet SET lockedBalance = lockedBalance + order.amount,\navailableBalance = availableBalance - order.amount
+note right: <b>[FREEZE WALLET]</b> Đóng băng dòng tiền tranh chấp.\nNgăn chặn Partner rút khoản này.
+svc -> db : COMMIT
+deactivate db
+
+svc --> api : 201 Created (Ticket ID)
+api --> hunter : Thông báo: "Đã tiếp nhận khiếu nại"
+api -> partner : Push Notification: "Bạn có 24h để giải trình khiếu nại!"
+
+== 2. Dispute Resolution Routing ==
+
+alt <b>[MANUAL: REJECT]</b> Admin bác bỏ (Bằng chứng của Hunter không hợp lệ)
+    admin -> api : POST /api/v1/disputes/{id}/reject
+    api -> svc : resolveDispute(REJECTED)
+    
+    svc -> db : UPDATE Orders SET status='COMPLETED'
+    svc -> db : UPDATE PartnerWallet SET lockedBalance = lockedBalance - amount,\navailableBalance = availableBalance + amount
+    note right: <b>[UNFREEZE WALLET]</b> Trả lại tiền khả dụng cho quán.
+    
+    svc --> api : 200 OK
+    api -> hunter : Push Notification: "Khiếu nại bị từ chối do thiếu bằng chứng."
+
+else <b>[MANUAL: ACCEPT]</b> Admin chấp thuận (Partner sai)
+    admin -> api : POST /api/v1/disputes/{id}/accept
+    api -> svc : resolveDispute(ACCEPTED)
+
+else <b>[AUTO: TIMEOUT]</b> Quá 24h Partner không phản hồi
+    cron -> db : SELECT Disputes WHERE createdAt < NOW() - 24h AND status='PENDING'
+    activate cron
+    cron -> svc : autoResolveDispute()
+    note right: Tự động phán quyết phần thắng thuộc về Hunter.
+    deactivate cron
+end
+
+== 3. Async Refund Execution (If ACCEPTED or AUTO-TIMEOUT) ==
+
+alt <b>[EXECUTE REFUND]</b> Tiến hành Hoàn tiền cho Hunter
+    svc -> gw : POST /v1/refund (transactionId, amount)
+    activate gw
+    
+    ' Trạng thái chờ trung gian do trễ ngân hàng
+    gw --> svc : HTTP 202 Accepted (Processing)
+    deactivate gw
+    
+    svc -> db : BEGIN TRANSACTION
+    svc -> db : UPDATE Orders SET status='REFUND_PENDING'
+    note right: Trạng thái trễ 3-7 ngày làm việc của Ngân hàng.
+    
+    svc -> db : UPDATE PartnerWallet SET lockedBalance = lockedBalance - amount
+    note right: <b>[DEDUCT]</b> Trừ đứt số tiền đã đóng băng khỏi hệ thống.
+    svc -> db : COMMIT
+    
+    svc --> api : Refund Initiated
+    api -> hunter : Thông báo: "Lệnh hoàn tiền đã tạo. Vui lòng chờ 3-7 ngày làm việc."
+    
+    ... Vài ngày sau ...
+    
+    ' Webhook phản hồi kết quả cuối cùng
+    gw -> api : POST IPN Webhook /ipn/refund (ResultCode=SUCCESS)
+    activate api
+    api -> svc : finalizeRefund()
+    svc -> db : UPDATE Orders SET status='REFUNDED'
+    api --> gw : HTTP 200 OK (Ack Webhook)
+    
+    api -> hunter : Push Notification: "Hoàn tiền thành công vào ví của bạn!"
+    deactivate api
+end
+
+deactivate svc
+deactivate api
+@enduml
