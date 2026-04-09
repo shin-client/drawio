@@ -1,0 +1,96 @@
+@startuml
+!theme plain
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 150
+autonumber "<b>[00]"
+
+actor "Partner\n(Chủ quán)" as partner
+box "Partner App (Frontend)"
+    participant "Mobile Client" as app
+end box
+
+box "Food Rescue System (Backend)"
+    participant "API Gateway" as api
+    participant "Product Service" as svc
+    database "Database" as db
+    participant "Event Queue\n(Kafka/RabbitMQ)" as queue
+end box
+
+participant "AI Vision API\n(3rd Party)" as ai
+
+== 1. Image Upload & Pre-flight Checks ==
+
+partner -> app : Tải ảnh/Chụp ảnh món ăn
+activate app
+
+' [Lớp bảo vệ 1] Validation ngay tại App
+alt <b>[VALIDATION FAILED]</b> Dung lượng > 5MB / File không hợp lệ
+    app --> partner : Cảnh báo: "Vui lòng chọn ảnh JPG/PNG < 5MB"
+else <b>[VALIDATION PASSED]</b> Hợp lệ
+    app -> api : POST /api/v1/products/analyze (Image_Payload)
+    activate api
+    api -> svc : processImage()
+    activate svc
+
+    == 2. AI Integration & Fallback Mechanism ==
+    
+    svc -> ai : POST /v1/vision/analyze
+    activate ai
+
+    ' [Lớp bảo vệ 2] Xử lý kết quả từ 3rd Party
+    alt <b>[AI SUCCESS]</b> Nhận diện thành công
+        ai --> svc : Return JSON (Labels, Confidence)
+        svc -> svc : Parse JSON -> Gợi ý Tên món & Giá
+        svc --> api : 200 OK (Auto-fill Data)
+        api --> app : Render UI: Form Đã điền sẵn
+        app --> partner : Hiển thị Form kèm dữ liệu gợi ý
+        
+    else <b>[AI EXCEPTION]</b> Timeout / Không nhận diện được / Lỗi 500
+        ai --> svc : Timeout or Error Response
+        deactivate ai
+        svc --> api : 503 AI Service Unavailable
+        api --> app : HTTP 200 OK (Kèm cờ Fallback=true)
+        app --> partner : Cảnh báo: "Không thể nhận diện ảnh. Vui lòng nhập thủ công!"
+        app -> app : Render UI: Form Nhập tay (Trống)
+    end
+    deactivate svc
+    deactivate api
+
+    == 3. Review & Submit (Publish) ==
+    
+    partner -> app : Sửa/Nhập Tên, Giá, Số lượng & Giờ Pick-up
+    partner -> app : Click "Publish"
+    
+    app -> api : POST /api/v1/products/publish
+    activate api
+    api -> svc : createFlashSale()
+    activate svc
+    
+    svc -> db : INSERT INTO Products (status='AVAILABLE')
+    activate db
+    db --> svc : Product Created (productId)
+    deactivate db
+
+    == 4. Async Operations (Push Notifications) ==
+    
+    ' Bắn Event vào Queue để xử lý ngầm, không bắt User chờ
+    svc -> queue : Publish Event: "NEW_FLASH_SALE_CREATED" (storeLat, storeLng)
+    note right: Asynchronous "Fire & Forget".\nDecouples Notification from Main Flow.
+    
+    ' Trả kết quả về App ngay lập tức
+    svc --> api : 200 OK (Published)
+    api --> app : Success Response
+    app --> partner : Thông báo: "Đăng bán siêu tốc thành công!"
+    deactivate svc
+    deactivate api
+    deactivate app
+
+    ' Luồng chạy ngầm của Event Queue
+    activate queue
+    queue -> queue : Worker quét Hunters lân cận (Bán kính 5km)
+    queue -> : Gửi Push Notification (FCM/APNs) tới thiết bị Hunter
+    deactivate queue
+
+end
+
+@enduml
