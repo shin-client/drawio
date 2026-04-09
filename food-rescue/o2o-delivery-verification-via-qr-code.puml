@@ -1,0 +1,87 @@
+@startuml
+!theme plain
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 150
+autonumber "<b>[00]"
+
+actor       "Hunter\n(Sinh viên)" as hunter
+box "Partner Device (Cửa hàng)" 
+    participant "Scanner App\n(Frontend)" as partner
+end box
+
+box "Food Rescue System (Backend)"
+    participant "API Gateway" as api
+    participant "Order Service" as order
+    database    "Database" as db
+end box
+
+== 1. Initiate Verification (O2O Handshake) ==
+
+hunter -> partner : Xuất trình Mã QR (E-Ticket) hoặc Mã PIN
+
+' Xử lý Fallback lỗi Hardware ngay từ đầu
+alt <b>[HARDWARE OK]</b> Dùng Camera quét QR
+    partner -> partner : Open Camera & Scan QR Code
+    partner -> partner : Extract QR String (qrToken)
+else <b>[FALLBACK]</b> Camera lỗi / Lóa sáng
+    partner -> partner : Chuyển sang chế độ "Nhập PIN thủ công"
+    hunter -> partner : Đọc mã PIN 6 số (Alternative Token)
+    partner -> partner : Type 6-digit PIN
+end
+
+partner -> api : POST /api/v1/orders/verify (token_or_pin, storeId)
+activate api
+
+== 2. Core Validation & Security Checks ==
+
+api -> order : verifyPickUpCode(payload)
+activate order
+
+order -> order : Decode/Hash Payload
+order -> db : SELECT * FROM Orders WHERE qrToken = hash OR pin = hash
+activate db
+
+' LỚP BẢO VỆ 1: Chống Fake QR
+alt <b>[SECURITY ALERT]</b> Invalid Token (Fake QR / Sai mã)
+    db --> order : Return NULL (Not Found)
+    order --> api : Exception: Token_Invalid
+    api --> partner : 403 Forbidden 
+    partner --> hunter : Hiển thị cảnh báo: "Mã QR giả mạo hoặc không tồn tại!"
+    
+else <b>[TOKEN VALID]</b> Tìm thấy đơn hàng
+    db --> order : Return Order Record
+    
+    ' LỚP BẢO VỆ 2: Chống Replay Attack (Xài mã cũ)
+    alt <b>[SECURITY ALERT]</b> Replay Attack (Trạng thái != PAID)
+        order -> order : Check Order.status
+        order --> api : Exception: Token_Already_Used
+        api --> partner : 409 Conflict 
+        partner --> hunter : Cảnh báo: "Mã này đã được quét lúc [Thời gian]. Không thể nhận thêm!"
+        
+    else <b>[HAPPY PATH]</b> Hợp lệ (Trạng thái == PAID)
+        
+        == 3. Execute Transaction & Handover ==
+        
+        ' Cập nhật trạng thái bằng 1 Transaction duy nhất
+        order -> db : BEGIN TRANSACTION
+        order -> db : UPDATE Orders SET status='COMPLETED', updated_at=NOW
+        note right: Đánh dấu "Đã nhận món" để khóa mã QR vĩnh viễn. Space: O(1)
+        
+        ' Chuyển tiền nội bộ (Ví Tạm Giữ -> Ví Khả Dụng)
+        order -> db : UPDATE PartnerWallet SET balance = balance + order.amount
+        order -> db : COMMIT
+        deactivate db
+        
+        order --> api : Verification Success
+        api --> partner : 200 OK (Order Details)
+        partner --> hunter : Màn hình xanh: "Xác thực thành công. Giao Hộp mù cho khách!"
+        
+        ' Bắn thông báo Async cho khách
+        api -> hunter : Push Notification: "Chúc bạn ngon miệng! Đừng quên đánh giá quán nhé!"
+    end
+end
+
+deactivate order
+deactivate api
+
+@enduml
