@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36">
   <diagram name="Page-1" id="kAZm9rBJ2fUsaz2omxyW">
-    <mxGraphModel dx="2852" dy="1570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2020" dy="1176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-5" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Chọn mua Hộp mù trên App" vertex="1">
           <mxGeometry height="54" width="259" x="1506.5" y="232" as="geometry" />
         </mxCell>
-        <mxCell id="9XSuz_5MqGPFBXbn69Sz-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Xác nhận Giờ Pick-up &amp; Giá" vertex="1">
+        <mxCell id="9XSuz_5MqGPFBXbn69Sz-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Xác nhận Giờ đến nhận &amp; Giá" vertex="1">
           <mxGeometry height="54" width="258" x="1507" y="336" as="geometry" />
         </mxCell>
         <mxCell id="9XSuz_5MqGPFBXbn69Sz-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;fontSize=20;" value="Bấm nút &#39;Thanh toán&#39;" vertex="1">
