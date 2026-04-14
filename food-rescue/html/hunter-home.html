@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=440, height=956, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffefee",
+                    "inverse-primary": "#69f6b8",
+                    "surface-variant": "#dadddf",
+                    "on-secondary-fixed": "#373d4e",
+                    "on-primary-container": "#005a3c",
+                    "tertiary-fixed": "#ff9099",
+                    "inverse-on-surface": "#9b9d9e",
+                    "outline-variant": "#abadae",
+                    "tertiary-container": "#ff9099",
+                    "secondary-fixed-dim": "#cbd1e6",
+                    "on-secondary-container": "#495061",
+                    "primary": "#006947",
+                    "surface-container-high": "#e0e3e4",
+                    "on-surface-variant": "#595c5d",
+                    "inverse-surface": "#0c0f10",
+                    "on-surface": "#2c2f30",
+                    "on-secondary-fixed-variant": "#535a6b",
+                    "surface-tint": "#006947",
+                    "on-primary-fixed": "#00452d",
+                    "secondary-container": "#d9dff5",
+                    "surface-container-highest": "#dadddf",
+                    "surface-bright": "#f5f6f7",
+                    "error-dim": "#9f0519",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#545b6d",
+                    "on-error-container": "#570008",
+                    "on-tertiary-container": "#68001b",
+                    "surface-container-low": "#eff1f2",
+                    "on-background": "#2c2f30",
+                    "surface": "#f5f6f7",
+                    "surface-container": "#e6e8ea",
+                    "outline": "#757778",
+                    "tertiary-dim": "#a20030",
+                    "background": "#f5f6f7",
+                    "secondary-fixed": "#d9dff5",
+                    "surface-dim": "#d1d5d7",
+                    "primary-fixed-dim": "#58e7ab",
+                    "primary-fixed": "#69f6b8",
+                    "on-tertiary-fixed-variant": "#780021",
+                    "on-tertiary-fixed": "#39000b",
+                    "primary-dim": "#005c3d",
+                    "secondary-dim": "#494f61",
+                    "on-tertiary": "#ffefef",
+                    "on-secondary": "#f0f2ff",
+                    "tertiary-fixed-dim": "#ff7986",
+                    "error-container": "#fb5151",
+                    "on-primary-fixed-variant": "#006544",
+                    "tertiary": "#b80438",
+                    "error": "#b31b25",
+                    "on-primary": "#c8ffe0",
+                    "primary-container": "#69f6b8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .squircle { border-radius: 2.5rem; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500" data-icon="location_on" style="">location_on</span>
+<h1 class="text-emerald-600 dark:text-emerald-400 font-extrabold tracking-tight font-['Plus_Jakarta_Sans'] text-lg" style="">Food Rescue</h1>
+</div>
+<!-- Reward Progress Section -->
+<div class="flex items-center gap-3 bg-white shadow-sm rounded-full pl-1 pr-4 py-1 border border-surface-variant/50">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-emerald-100" cx="16" cy="16" fill="transparent" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-emerald-500" cx="16" cy="16" fill="transparent" r="14" stroke="currentColor" stroke-dasharray="88" stroke-dashoffset="20" stroke-width="3"></circle>
+</svg>
+<span class="material-symbols-outlined text-emerald-600 text-sm" style="font-variation-settings: &quot;FILL&quot; 1;">stars</span>
+</div>
+<span class="font-bold text-sm text-on-surface" style="">1250 pts</span>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Quick Category Filters -->
+<section class="mb-6">
+<div class="flex overflow-x-auto hide-scrollbar gap-3 px-6 py-2">
+<button class="flex-none bg-primary text-white px-5 py-2 rounded-full font-bold text-sm shadow-lg shadow-primary/20" style="">Tất Cả</button>
+<button class="flex-none bg-white text-on-surface-variant px-5 py-2 rounded-full font-semibold text-sm border border-surface-variant hover:bg-slate-100 transition-colors" style="">Bánh</button>
+<button class="flex-none bg-white text-on-surface-variant px-5 py-2 rounded-full font-semibold text-sm border border-surface-variant hover:bg-slate-100 transition-colors" style="">Đồ Chay</button>
+<button class="flex-none bg-white text-on-surface-variant px-5 py-2 rounded-full font-semibold text-sm border border-surface-variant hover:bg-slate-100 transition-colors" style="">Cơm &amp; Mặn</button>
+<button class="flex-none bg-white text-on-surface-variant px-5 py-2 rounded-full font-semibold text-sm border border-surface-variant hover:bg-slate-100 transition-colors" style="">Gần Đây</button>
+</div>
+</section>
+<!-- Radar Cứu Đói Hero Section -->
+<section class="px-6 mb-8">
+<div class="relative h-48 rounded-xl overflow-hidden shadow-xl group">
+<img alt="Radar Cứu Đói" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="atmospheric overhead shot of glowing digital radar interface over a stylized city map with food icons floating above streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw7lUaZFef50UOCESMlWi2OqkarX6VODLSgjBXIS8tHdrPQE-prl-QuEJlOZ8eATXBfbXqjQlrNGhjSD7xq5Q5VOoCDk2RmBHBou3bti6Jk4ELl7X3Hw93vaCIR4Yc8g1sD21upzD4hGnSAcJYTKksp6VtiLhY_gf3KPDx6zQY7mNZ80RWC6Gplc5MuwbKDIe1L1KAXrYBKD9D9dxEAZqp8Dbenf3KdPl-umojiFgug-TzV9_K12sFK02Hx2_UgSWXferwVfT53g4" style="">
+<div class="absolute inset-0 bg-gradient-to-r from-emerald-900/80 to-transparent flex flex-col justify-center p-6">
+<span class="text-emerald-300 font-bold text-xs uppercase tracking-widest mb-1" style="">Live Tracking</span>
+<h2 class="text-white text-3xl font-extrabold mb-2" style="">Radar Cứu Đói</h2>
+<p class="text-emerald-50/80 text-sm max-w-[200px]" style="">Đang có 12 túi mù gần bạn tại Quận 1...</p>
+<button class="mt-4 bg-white text-emerald-700 px-4 py-2 rounded-full text-xs font-bold w-fit shadow-lg active:scale-95 transition-all" style="">Scan Now</button>
+</div>
+</div>
+</section>
+<!-- Social Proof: Cộng đồng Cứu Đói -->
+<section class="px-6 mb-8">
+<div class="bg-primary/5 rounded-2xl p-4 border border-primary/10">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-bold text-primary flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-lg" style="">volunteer_activism</span>
+                        Cộng đồng Cứu Đói
+                    </h3>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold" style="">LIVE</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 bg-white/50 p-2 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-xs" style="">AN</div>
+<p class="text-sm text-on-surface" style=""><span class="font-bold" style="">An</span> vừa giải cứu được&nbsp;<span class="text-emerald-600 font-bold" style="">2kg</span> thức ăn từ Bánh Mì Minh!</p>
+</div>
+<div class="flex items-center gap-3 bg-white/50 p-2 rounded-xl">
+<div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-xs" style="">LM</div>
+<p class="text-sm text-on-surface" style=""><span class="font-bold" style="">Lâm</span> vừa mua gói&nbsp;<span class="text-emerald-600 font-bold" style="">Hộp Mù Bí Ẩn</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Flash Sale Horizontal Row -->
+<section class="mb-8">
+<div class="flex items-center justify-between px-6 mb-4">
+<h3 class="text-lg font-extrabold text-on-surface flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-tertiary" style="">bolt</span>
+                    Flash Sale
+                </h3>
+<span class="text-xs font-bold text-tertiary bg-tertiary/10 px-3 py-1 rounded-full" style="">Kết thúc trong<br>00:45:12</span>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 px-6">
+<!-- Card 1 -->
+<div class="flex-none w-64 bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant/30 active:scale-95 transition-transform">
+<div class="relative h-32">
+<img alt="Bakery Items" class="w-full h-full object-cover" data-alt="close-up of golden brown assorted croissants and danishes in a rustic wooden basket with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4dohEa80jAI_iijsycCQ_d5IrEkgGoj8bXSudRPRbMw16_Eop6KwdvEaxEFGUx95qcpVuVjsBFmPvB3kPBWDkkOiR0_Wkj1F00dTVUwqB3hyZbnqD6hVQM9-4_vVMOCwea7s-SKT1RpSWIxLscowN_4KU2-kN9ZK47Pjq6xXgHfPefeZy_fg1B4MbnQhxhWD3J72wP-g1d66TJ65UY4zCmkM-FqOadYc-sST1t8I2hbZSN3BJkOQ6gzW5fziADVgTD9DNJFFv-WU" style="">
+<div class="absolute top-2 left-2 bg-tertiary text-white text-[10px] font-black px-2 py-1 rounded uppercase" style="">-70%</div>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-on-surface truncate" style="">Highlands Bakery Mix</h4>
+<p class="text-xs text-on-surface-variant mb-2" style="">350m away • 4.8★</p>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold" style="">25.000đ</span>
+<span class="text-[10px] text-on-surface-variant line-through" style="">85.000đ</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-64 bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant/30 active:scale-95 transition-transform">
+<div class="relative h-32">
+<img alt="Sushi Set" class="w-full h-full object-cover" data-alt="elegant platter of fresh salmon and tuna sushi rolls arranged on a black slate board with bright studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTg2nZlGCOltejcfs27bzlKYCtT2ze4hcc5goo0Q4RMWP_eslYUT6yYf3NaBRRK2DrqdeNIpM-e-e9VXxU-wwKrAx_j5Xv009ubMT0_TmPm2OIB9vaEP9qQd-HwYz0Y2VnR5WgZaRalL79lm_KY9s2lX_lQr2ib7saj1lBDqmLs2qvYWqlhcK781wi_5Uu_hkL5rV6i3aUjdAvSm5O4YVfK4HcgvtoE5j60b8BbZ1Rstu_apKqcaPNwGgkoTH71QMKULeIE7vZY0k" style="">
+<div class="absolute top-2 left-2 bg-tertiary text-white text-[10px] font-black px-2 py-1 rounded uppercase" style="">-50%</div>
+</div>
+<div class="p-3">
+<h4 class="font-bold text-on-surface truncate" style="">Sushi World Express</h4>
+<p class="text-xs text-on-surface-variant mb-2" style="">1.2km away • 4.5★</p>
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold" style="">89.000đ</span>
+<span class="text-[10px] text-on-surface-variant line-through" style="">180.000đ</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hộp Mù Bí Ẩn Banner -->
+<section class="px-6 mb-8">
+<div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-indigo-900 to-purple-800 p-6 shadow-xl shadow-indigo-200">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-yellow-400" data-weight="fill" style="">package_2</span>
+<h3 class="text-white font-bold tracking-wide" style="">Hộp Mù Bí Ẩn</h3>
+</div>
+<p class="text-indigo-100 text-sm mb-4 leading-relaxed" style="">Chỉ 49k cho một bữa ăn đầy đủ trị giá tới 150k. <br>Bạn sẽ nhận được gì?</p>
+<button class="bg-yellow-400 text-indigo-900 px-6 py-2 rounded-full font-extrabold text-sm shadow-lg active:translate-y-0.5 transition-all" style="">Thử Vận May</button>
+</div>
+<!-- Decorative elements for mystery vibe -->
+<div class="absolute -right-4 -bottom-4 opacity-20 rotate-12">
+<span class="material-symbols-outlined text-9xl text-white" style="">question_mark</span>
+</div>
+</div>
+</section>
+<!-- Dành cho bạn (Picked for You) -->
+<section class="px-6 mb-12">
+<h3 class="text-lg font-extrabold text-on-surface mb-4" style="">Dành cho bạn</h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Bento Style Card 1 -->
+<div class="bg-white rounded-xl p-4 flex gap-4 border border-surface-variant/30 shadow-sm">
+<img alt="Organic Salad" class="w-24 h-24 rounded-lg object-cover flex-none" data-alt="vibrant colorful salad bowl with avocado, tomatoes, and leafy greens in a white ceramic bowl on a light wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAF3Eco26UIg-4DqUIT1pPou2OoaJj4YbxrSpnze3rM8ZYazDX9rrKsS4z5iE7HwWP1wqjr6p6AtzMgCwBIsm060fWDMpHoA4mcVC9ovjVkIlB_jnhbrpf-22nekIcZ--vFnHGQEpQ4wC4otPsJBd4sbsu48_nTOXWX80eEtAcE8vWIDeUHq6bHvtTqu5OOhwLNIY2vj8ZQhFcKqhcyTXJgwDmeQZiakw0n5_R1ssw2QN-stPBhRoAVdys8sTB55JMBnaH1sxubHY" style="">
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="font-bold text-on-surface" style="">The Salad Bar</h4>
+<p class="text-xs text-on-surface-variant" style="">Vegetarian • District 3</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-bold" style="">PICKED FOR YOU</span>
+<span class="text-primary font-bold text-sm" style="">45.000đ</span>
+</div>
+</div>
+</div>
+<!-- Bento Style Card 2 -->
+<div class="bg-white rounded-xl p-4 flex gap-4 border border-surface-variant/30 shadow-sm">
+<img alt="Local Rice" class="w-24 h-24 rounded-lg object-cover flex-none" data-alt="authentic vietnamese broken rice plate with grilled pork chop, egg meatloaf, and fresh cucumbers in a street food setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0jRSoECb56PjhcM_4S50CYLPLsHQ4xxSLxGU82y91s38ZAf_wVrkiimKyDSveBNpZ5_6FpjP48xdMxpVpPkFfWIbZxsWxtalE8L3-Cze7TJFPsFK1_5-XhyVzfrPG35glVkx9xZ29tbmC4OO5ltEv0upH9OrAslyU13n7A1WXoVjxIQ80i1J9ZCZnW2zD49gF1rChIiRvIDeo7_1Tk3ios9mGe5_CbkwiR3Gij5y3NZ54SYMly75Jh2eIjurw6GG4Oq91PAiMklw" style="">
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="font-bold text-on-surface" style="">Cơm Tấm Cali</h4>
+<p class="text-xs text-on-surface-variant" style="">Nearby • 200m away</p>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-bold" style="">FRESHLY SAVED</span>
+<span class="text-primary font-bold text-sm" style="">35.000đ</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 py-3 bg-slate-900/90 dark:bg-slate-800/95 backdrop-blur-lg rounded-full mx-6 mb-8 shadow-2xl shadow-emerald-900/20">
+<!-- Explore (Active) -->
+<a class="flex flex-col items-center justify-center bg-emerald-500 text-white rounded-full p-3 active:scale-110 duration-300 ease-out" href="#" style="">
+<span class="material-symbols-outlined text-2xl" data-icon="explore" style="font-variation-settings: &quot;FILL&quot; 1;">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider mt-1" style="">Khám phá</span>
+</a>
+<!-- Orders -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-white transition-all" href="#" style="">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_bag" style="">shopping_bag</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider mt-1" style="">Đơn hàng</span>
+</a>
+<!-- Impact -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-white transition-all" href="#" style="">
+<span class="material-symbols-outlined text-2xl" data-icon="volunteer_activism" style="">volunteer_activism</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider mt-1" style="">Impact</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-white transition-all" href="#" style="">
+<span class="material-symbols-outlined text-2xl" data-icon="person" style="">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold uppercase tracking-wider mt-1" style="">Cá nhân</span>
+</a>
+</nav>
+</body></html>

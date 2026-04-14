@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=440, height=956, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffefee", "inverse-primary": "#69f6b8", "surface-variant": "#dadddf", "on-secondary-fixed": "#373d4e", "on-primary-container": "#005a3c", "tertiary-fixed": "#ff9099", "inverse-on-surface": "#9b9d9e", "outline-variant": "#abadae", "tertiary-container": "#ff9099", "secondary-fixed-dim": "#cbd1e6", "on-secondary-container": "#495061", "primary": "#006947", "surface-container-high": "#e0e3e4", "on-surface-variant": "#595c5d", "inverse-surface": "#0c0f10", "on-surface": "#2c2f30", "on-secondary-fixed-variant": "#535a6b", "surface-tint": "#006947", "on-primary-fixed": "#00452d", "secondary-container": "#d9dff5", "surface-container-highest": "#dadddf", "surface-bright": "#f5f6f7", "error-dim": "#9f0519", "surface-container-lowest": "#ffffff", "secondary": "#545b6d", "on-error-container": "#570008", "on-tertiary-container": "#68001b", "surface-container-low": "#eff1f2", "on-background": "#2c2f30", "surface": "#f5f6f7", "surface-container": "#e6e8ea", "outline": "#757778", "tertiary-dim": "#a20030", "background": "#f5f6f7", "secondary-fixed": "#d9dff5", "surface-dim": "#d1d5d7", "primary-fixed-dim": "#58e7ab", "primary-fixed": "#69f6b8", "on-tertiary-fixed-variant": "#780021", "on-tertiary-fixed": "#39000b", "primary-dim": "#005c3d", "secondary-dim": "#494f61", "on-tertiary": "#ffefef", "on-secondary": "#f0f2ff", "tertiary-fixed-dim": "#ff7986", "error-container": "#fb5151", "on-primary-fixed-variant": "#006544", "tertiary": "#b80438", "error": "#b31b25", "on-primary": "#c8ffe0", "primary-container": "#69f6b8"
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Plus Jakarta Sans"], "label": ["Plus Jakarta Sans"] }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .squircle { border-radius: 2.5rem; }
+        body { min-height: max(884px, 100dvh); }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-background min-h-screen relative overflow-hidden flex flex-col">
+
+    <div class="absolute top-[-5%] right-[-20%] w-[500px] h-[500px] bg-primary-fixed/30 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] left-[-20%] w-[400px] h-[400px] bg-tertiary-fixed/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <header class="relative z-10 w-full px-6 py-6 flex justify-between items-center">
+        <button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-full shadow-sm active:scale-95 transition-transform">
+            <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+        </button>
+        <span class="font-extrabold text-primary text-sm tracking-widest uppercase">Food Rescue</span>
+        <div class="w-10"></div>
+    </header>
+
+    <main class="flex-1 flex flex-col justify-center px-6 relative z-10 pb-12">
+        
+        <div class="mb-10 text-center">
+            <div class="w-20 h-20 bg-primary text-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_20px_40px_rgba(0,105,71,0.25)] rotate-3">
+                <span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+            </div>
+            <h1 class="text-3xl font-extrabold text-on-background tracking-tight mb-2">Trở thành Thợ săn!</h1>
+            <p class="text-on-surface-variant font-medium text-sm">Tạo tài khoản để bắt đầu hành trình giải cứu.</p>
+        </div>
+
+        <div class="bg-surface-container-lowest/80 backdrop-blur-2xl rounded-[2.5rem] p-6 shadow-xl border border-white/50">
+            
+            <div class="flex gap-3 mb-6">
+                <button class="flex-1 flex items-center justify-center bg-surface text-on-surface py-3.5 rounded-2xl border border-surface-variant/50 hover:bg-surface-container transition-colors active:scale-[0.98]">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                </button>
+                <button class="flex-1 flex items-center justify-center bg-[#0c0f10] text-white py-3.5 rounded-2xl hover:bg-black transition-colors active:scale-[0.98]">
+                    <img src="https://www.svgrepo.com/show/511330/apple-173.svg" alt="Apple" class="w-5 h-5 filter invert">
+                </button>
+            </div>
+
+            <div class="relative flex items-center py-2 mb-6">
+                <div class="flex-grow border-t border-surface-variant/50"></div>
+                <span class="flex-shrink-0 mx-4 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">Hoặc dùng Email</span>
+                <div class="flex-grow border-t border-surface-variant/50"></div>
+            </div>
+
+            <form class="space-y-4">
+                <div class="relative flex items-center bg-surface rounded-2xl border border-surface-variant/50 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+                    <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">person</span>
+                    <input type="text" placeholder="Họ và tên hiển thị" class="w-full bg-transparent border-none py-4 pl-12 pr-4 text-sm font-medium text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60">
+                </div>
+
+                <div class="relative flex items-center bg-surface rounded-2xl border border-surface-variant/50 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+                    <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">mail</span>
+                    <input type="email" placeholder="Email của bạn" class="w-full bg-transparent border-none py-4 pl-12 pr-4 text-sm font-medium text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60">
+                </div>
+
+                <div>
+                    <div class="relative flex items-center bg-surface rounded-2xl border border-surface-variant/50 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+                        <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">lock</span>
+                        <input type="password" placeholder="Tạo mật khẩu" class="w-full bg-transparent border-none py-4 pl-12 pr-12 text-sm font-medium text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60">
+                        <button type="button" class="absolute right-4 text-on-surface-variant hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-xl">visibility_off</span>
+                        </button>
+                    </div>
+                    
+                    <div class="flex gap-1 mt-2.5 px-2">
+                        <div class="h-1 flex-1 rounded-full bg-error transition-all duration-300"></div>
+                        <div class="h-1 flex-1 rounded-full bg-surface-variant transition-all duration-300"></div>
+                        <div class="h-1 flex-1 rounded-full bg-surface-variant transition-all duration-300"></div>
+                        <span class="text-[9px] font-bold text-error uppercase tracking-wider ml-2">Yếu</span>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-primary text-white py-4 rounded-full font-extrabold text-sm shadow-lg shadow-primary/30 active:scale-[0.98] transition-all">
+                        Tạo tài khoản
+                    </button>
+                </div>
+                
+                <p class="text-center text-[10px] text-on-surface-variant font-medium leading-relaxed px-2">
+                    Bằng việc đăng ký, bạn đồng ý với <a href="#" class="text-primary font-bold underline">Điều khoản dịch vụ</a> và <a href="#" class="text-primary font-bold underline">Chính sách bảo mật</a> của chúng tôi.
+                </p>
+            </form>
+
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-on-surface-variant text-sm font-medium">
+                Đã có tài khoản? 
+                <a href="#" class="text-primary font-extrabold ml-1 hover:underline">Đăng nhập</a>
+            </p>
+        </div>
+
+    </main>
+
+</body>
+</html>

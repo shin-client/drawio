@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#ffefee", "inverse-primary": "#69f6b8", "surface-variant": "#dadddf", "on-secondary-fixed": "#373d4e", "on-primary-container": "#005a3c", "tertiary-fixed": "#ff9099", "inverse-on-surface": "#9b9d9e", "outline-variant": "#abadae", "tertiary-container": "#ff9099", "secondary-fixed-dim": "#cbd1e6", "on-secondary-container": "#495061", "primary": "#006947", "surface-container-high": "#e0e3e4", "on-surface-variant": "#595c5d", "inverse-surface": "#0c0f10", "on-surface": "#2c2f30", "on-secondary-fixed-variant": "#535a6b", "surface-tint": "#006947", "on-primary-fixed": "#00452d", "secondary-container": "#d9dff5", "surface-container-highest": "#dadddf", "surface-bright": "#f5f6f7", "error-dim": "#9f0519", "surface-container-lowest": "#ffffff", "secondary": "#545b6d", "on-error-container": "#570008", "on-tertiary-container": "#68001b", "surface-container-low": "#eff1f2", "on-background": "#2c2f30", "surface": "#f5f6f7", "surface-container": "#e6e8ea", "outline": "#757778", "tertiary-dim": "#a20030", "background": "#f5f6f7", "secondary-fixed": "#d9dff5", "surface-dim": "#d1d5d7", "primary-fixed-dim": "#58e7ab", "primary-fixed": "#69f6b8", "on-tertiary-fixed-variant": "#780021", "on-tertiary-fixed": "#39000b", "primary-dim": "#005c3d", "secondary-dim": "#494f61", "on-tertiary": "#ffefef", "on-secondary": "#f0f2ff", "tertiary-fixed-dim": "#ff7986", "error-container": "#fb5151", "on-primary-fixed-variant": "#006544", "tertiary": "#b80438", "error": "#b31b25", "on-primary": "#c8ffe0", "primary-container": "#69f6b8" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Plus Jakarta Sans"], "label": ["Plus Jakarta Sans"] } } } }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #1e1e24; /* Nền tối giống hình */ }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .dot-pattern { background-image: radial-gradient(#4b4b56 1px, transparent 1px); background-size: 20px 20px; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-8 dot-pattern">
+
+    <div class="bg-[#dadddf] rounded-[2rem] p-6 shadow-[0_0_0_4px_rgba(139,92,246,0.8),0_20px_50px_rgba(0,0,0,0.5)] w-[1200px] h-auto grid grid-cols-4 gap-4">
+        
+        <div class="flex flex-col gap-4">
+            <div class="bg-primary text-white p-5 rounded-2xl h-40 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="flex justify-between items-start font-bold text-sm z-10">
+                    <span>Primary</span>
+                    <span class="opacity-80">#006947</span>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-12 flex">
+                    <div class="flex-1 bg-black/60"></div><div class="flex-1 bg-black/40"></div><div class="flex-1 bg-black/20"></div>
+                    <div class="flex-1 bg-transparent"></div>
+                    <div class="flex-1 bg-white/20"></div><div class="flex-1 bg-white/40"></div><div class="flex-1 bg-white/60"></div>
+                </div>
+            </div>
+            
+            <div class="bg-on-background text-white p-5 rounded-2xl h-40 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="flex justify-between items-start font-bold text-sm z-10">
+                    <span>Secondary</span>
+                    <span class="opacity-80">#2C2F30</span>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-12 flex">
+                    <div class="flex-1 bg-black/60"></div><div class="flex-1 bg-black/40"></div><div class="flex-1 bg-black/20"></div>
+                    <div class="flex-1 bg-transparent"></div>
+                    <div class="flex-1 bg-white/20"></div><div class="flex-1 bg-white/40"></div><div class="flex-1 bg-white/60"></div>
+                </div>
+            </div>
+
+            <div class="bg-error text-white p-5 rounded-2xl h-40 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="flex justify-between items-start font-bold text-sm z-10">
+                    <span>Tertiary</span>
+                    <span class="opacity-80">#B31B25</span>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-12 flex">
+                    <div class="flex-1 bg-black/60"></div><div class="flex-1 bg-black/40"></div><div class="flex-1 bg-black/20"></div>
+                    <div class="flex-1 bg-transparent"></div>
+                    <div class="flex-1 bg-white/20"></div><div class="flex-1 bg-white/40"></div><div class="flex-1 bg-white/60"></div>
+                </div>
+            </div>
+
+            <div class="bg-surface-bright text-on-surface p-5 rounded-2xl h-40 flex flex-col justify-between shadow-sm border border-outline-variant/20 relative overflow-hidden">
+                <div class="flex justify-between items-start font-bold text-sm z-10">
+                    <span>Neutral</span>
+                    <span class="opacity-80">#F5F6F7</span>
+                </div>
+                <div class="absolute bottom-0 left-0 w-full h-12 flex">
+                    <div class="flex-1 bg-black/60"></div><div class="flex-1 bg-black/40"></div><div class="flex-1 bg-black/20"></div>
+                    <div class="flex-1 bg-transparent"></div>
+                    <div class="flex-1 bg-white/20"></div><div class="flex-1 bg-white/40"></div><div class="flex-1 bg-white/60"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <div class="bg-surface-container-low rounded-2xl p-6 flex flex-col justify-between shadow-sm h-[172px]">
+                <div class="flex justify-between text-xs text-on-surface-variant font-medium">
+                    <span>Headline</span>
+                    <span>Plus Jakarta Sans</span>
+                </div>
+                <div class="text-7xl font-extrabold text-on-background tracking-tight">Aa</div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 flex flex-col justify-between shadow-sm h-[200px]">
+                <div class="flex justify-between text-xs text-on-surface-variant font-medium">
+                    <span>Body</span>
+                    <span>Plus Jakarta Sans</span>
+                </div>
+                <div class="text-7xl font-medium text-on-surface tracking-normal">Aa</div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 flex flex-col justify-between shadow-sm h-[140px]">
+                <div class="flex justify-between text-xs text-on-surface-variant font-medium">
+                    <span>Label</span>
+                    <span>Plus Jakarta Sans</span>
+                </div>
+                <div class="text-5xl font-bold text-on-surface-variant tracking-widest uppercase">Aa</div>
+            </div>
+        </div>
+
+        <div class="col-span-2 grid grid-cols-2 gap-4">
+		
+			<div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center gap-3">
+                <div class="flex gap-2">
+                    <span class="bg-error text-white text-[10px] font-black px-2.5 py-1 rounded-md shadow-sm">-50%</span>
+                    <span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">Flash Sale</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md">Cơm & Mặn</span>
+                    <div class="flex items-center gap-1 text-[10px] font-bold text-error bg-error-container/20 px-2 py-1 rounded-md">
+                        <span class="material-symbols-outlined text-[12px]">history</span> 21:00
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center gap-6">
+                <div class="w-6 h-6 rounded-full border-4 border-primary flex items-center justify-center">
+                    <div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                </div>
+                <div class="w-6 h-6 rounded-full border-2 border-outline-variant"></div>
+                
+                <div class="w-px h-8 bg-surface-variant"></div> <div class="w-6 h-6 rounded-md border-2 border-primary bg-primary text-white flex items-center justify-center shadow-sm">
+                    <span class="material-symbols-outlined text-[16px]">check</span>
+                </div>
+                <div class="w-6 h-6 rounded-md border-2 border-outline-variant"></div>
+            </div>
+            
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center gap-4">
+                <div class="flex gap-4">
+                    <button class="bg-primary text-white px-6 py-2.5 rounded-full font-extrabold text-sm shadow-md">Primary</button>
+                    <button class="bg-surface text-on-surface px-6 py-2.5 rounded-full font-bold text-sm border border-surface-variant/50 hover:bg-surface-container">Secondary</button>
+                </div>
+                <div class="flex gap-4">
+                    <button class="bg-[#0c0f10] text-white px-6 py-2.5 rounded-full font-extrabold text-sm">Inverted</button>
+                    <button class="bg-transparent text-on-surface px-6 py-2.5 rounded-full font-bold text-sm border-2 border-outline-variant">Outlined</button>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center">
+                <div class="w-full relative flex items-center bg-surface rounded-full border border-surface-variant/80">
+                    <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">search</span>
+                    <input type="text" placeholder="Search" class="w-full bg-transparent border-none py-3.5 pl-12 pr-4 text-sm font-medium text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60" disabled>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex flex-col justify-center gap-4">
+                <div class="w-[80%] h-2 bg-primary rounded-full"></div>
+                <div class="w-[90%] h-2 bg-on-background rounded-full"></div>
+                <div class="w-[50%] h-2 bg-error rounded-full"></div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center">
+                <div class="bg-surface rounded-full flex items-center p-2 gap-2 shadow-sm border border-outline-variant/10">
+                    <button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                    </button>
+                    <button class="w-10 h-10 rounded-full text-on-surface-variant flex items-center justify-center">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <button class="w-10 h-10 rounded-full text-on-surface-variant flex items-center justify-center">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center">
+                <button class="w-12 h-12 rounded-full bg-error-container/40 text-error flex items-center justify-center shadow-sm">
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center">
+                <button class="bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">edit</span> Label
+                </button>
+            </div>
+
+            <div class="bg-surface-container-low rounded-2xl p-6 shadow-sm flex items-center justify-center gap-3 col-span-2">
+                <button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+                    <span class="material-symbols-outlined text-[18px]">magic_button</span>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-on-secondary-fixed text-white flex items-center justify-center shadow-md">
+                    <span class="material-symbols-outlined text-[18px]">category</span>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-tertiary text-white flex items-center justify-center shadow-md">
+                    <span class="material-symbols-outlined text-[18px]">local_offer</span>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-error text-white flex items-center justify-center shadow-md">
+                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
