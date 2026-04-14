@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-error": "#ffefee", "inverse-primary": "#69f6b8", "surface-variant": "#dadddf", "on-secondary-fixed": "#373d4e", "on-primary-container": "#005a3c", "tertiary-fixed": "#ff9099", "inverse-on-surface": "#9b9d9e", "outline-variant": "#abadae", "tertiary-container": "#ff9099", "secondary-fixed-dim": "#cbd1e6", "on-secondary-container": "#495061", "primary": "#006947", "surface-container-high": "#e0e3e4", "on-surface-variant": "#595c5d", "inverse-surface": "#0c0f10", "on-surface": "#2c2f30", "on-secondary-fixed-variant": "#535a6b", "surface-tint": "#006947", "on-primary-fixed": "#00452d", "secondary-container": "#d9dff5", "surface-container-highest": "#dadddf", "surface-bright": "#f5f6f7", "error-dim": "#9f0519", "surface-container-lowest": "#ffffff", "secondary": "#545b6d", "on-error-container": "#570008", "on-tertiary-container": "#68001b", "surface-container-low": "#eff1f2", "on-background": "#2c2f30", "surface": "#f5f6f7", "surface-container": "#e6e8ea", "outline": "#757778", "tertiary-dim": "#a20030", "background": "#f5f6f7", "secondary-fixed": "#d9dff5", "surface-dim": "#d1d5d7", "primary-fixed-dim": "#58e7ab", "primary-fixed": "#69f6b8", "on-tertiary-fixed-variant": "#780021", "on-tertiary-fixed": "#39000b", "primary-dim": "#005c3d", "secondary-dim": "#494f61", "on-tertiary": "#ffefef", "on-secondary": "#f0f2ff", "tertiary-fixed-dim": "#ff7986", "error-container": "#fb5151", "on-primary-fixed-variant": "#006544", "tertiary": "#b80438", "error": "#b31b25", "on-primary": "#c8ffe0", "primary-container": "#69f6b8" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, fontFamily: { "headline": ["Plus Jakarta Sans"], "body": ["Plus Jakarta Sans"], "label": ["Plus Jakarta Sans"] } } } }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #e6e8ea; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Custom hide radio/checkbox */
+        .peer-hidden { display: none; }
+    </style>
+</head>
+<body class="antialiased text-on-background min-h-screen flex justify-center items-start sm:items-center">
+
+    <div class="relative w-full max-w-[440px] h-[100dvh] bg-surface-bright overflow-hidden shadow-2xl mx-auto flex flex-col">
+        
+        <div class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-50 pointer-events-none">
+            <button class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md rounded-full shadow-sm active:scale-95 transition-transform pointer-events-auto border border-surface-variant/30">
+                <span class="material-symbols-outlined text-on-surface">close</span>
+            </button>
+            <h1 class="font-extrabold text-lg text-on-background tracking-tight pointer-events-auto drop-shadow-sm">Đánh giá</h1>
+            <div class="w-10"></div>
+        </div>
+
+        <div class="h-full w-full overflow-y-auto no-scrollbar pt-24 pb-32 px-6">
+            
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden border border-surface-variant/30 flex-shrink-0 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Food">
+                </div>
+                <div>
+                    <span class="text-[10px] font-black text-primary uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded-md">FR-8821</span>
+                    <h2 class="font-extrabold text-base text-on-background mt-1 leading-tight line-clamp-1">Cơm Văn Phòng Gạo Lứt Xanh</h2>
+                    <p class="text-xs font-medium text-on-surface-variant mt-0.5">Cửa Hàng Thực Phẩm Xanh</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center mb-8">
+                <h3 class="font-extrabold text-xl text-on-background mb-1">Món ăn thế nào nhỉ?</h3>
+                <p class="text-sm font-medium text-on-surface-variant mb-6">Chạm vào sao để đánh giá nhé</p>
+                
+                <div class="flex items-center gap-2">
+                    <button class="active:scale-75 transition-transform">
+                        <span class="material-symbols-outlined text-[44px] text-yellow-400 drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </button>
+                    <button class="active:scale-75 transition-transform">
+                        <span class="material-symbols-outlined text-[44px] text-yellow-400 drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </button>
+                    <button class="active:scale-75 transition-transform">
+                        <span class="material-symbols-outlined text-[44px] text-yellow-400 drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </button>
+                    <button class="active:scale-75 transition-transform">
+                        <span class="material-symbols-outlined text-[44px] text-yellow-400 drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </button>
+                    <button class="active:scale-75 transition-transform">
+                        <span class="material-symbols-outlined text-[44px] text-surface-variant drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </button>
+                </div>
+                <span class="text-xs font-bold text-yellow-600 mt-3 bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">Tuyệt vời, sẽ quay lại!</span>
+            </div>
+
+            <div class="mb-8">
+				<h4 class="font-extrabold text-sm text-on-background mb-3">Điểm cộng lớn nhất là?</h4>
+				<div class="flex flex-wrap gap-2.5">
+					<label class="cursor-pointer select-none">
+						<input type="checkbox" class="peer hidden" checked>
+						<div class="px-4 py-2 rounded-full border border-outline-variant/30 text-xs font-bold text-on-surface-variant bg-surface-container-lowest peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all active:scale-95 shadow-sm">
+							😋 Đồ ăn ngon
+						</div>
+					</label>
+					
+					<label class="cursor-pointer select-none">
+						<input type="checkbox" class="peer hidden" checked>
+						<div class="px-4 py-2 rounded-full border border-outline-variant/30 text-xs font-bold text-on-surface-variant bg-surface-container-lowest peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all active:scale-95 shadow-sm">
+							💖 Chủ quán nhiệt tình
+						</div>
+					</label>
+					
+					<label class="cursor-pointer select-none">
+						<input type="checkbox" class="peer hidden">
+						<div class="px-4 py-2 rounded-full border border-outline-variant/30 text-xs font-bold text-on-surface-variant bg-surface-container-lowest peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all active:scale-95 shadow-sm">
+							📦 Đóng gói cẩn thận
+						</div>
+					</label>
+					
+					<label class="cursor-pointer select-none">
+						<input type="checkbox" class="peer hidden">
+						<div class="px-4 py-2 rounded-full border border-outline-variant/30 text-xs font-bold text-on-surface-variant bg-surface-container-lowest peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all active:scale-95 shadow-sm">
+							✨ Cực kỳ sạch sẽ
+						</div>
+					</label>
+					
+					<label class="cursor-pointer select-none">
+						<input type="checkbox" class="peer hidden">
+						<div class="px-4 py-2 rounded-full border border-outline-variant/30 text-xs font-bold text-on-surface-variant bg-surface-container-lowest peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary transition-all active:scale-95 shadow-sm">
+							💰 Siêu hời
+						</div>
+					</label>
+				</div>
+			</div>
+
+            <div class="mb-4">
+                <h4 class="font-extrabold text-sm text-on-background mb-3">Chia sẻ thêm (Không bắt buộc)</h4>
+                <textarea rows="3" placeholder="Món ăn hợp khẩu vị bạn chứ? Tiệm có dễ tìm không?" class="w-full bg-surface-container-lowest rounded-2xl border border-surface-variant/50 p-4 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none shadow-sm placeholder:text-on-surface-variant/60"></textarea>
+            </div>
+
+            <div>
+                <button class="w-full flex items-center justify-center gap-2 py-4 border-2 border-dashed border-surface-variant rounded-2xl text-primary font-extrabold text-sm bg-primary/5 hover:bg-primary/10 active:scale-[0.98] transition-all">
+                    <span class="material-symbols-outlined text-[20px]">add_a_photo</span>
+                    Thêm ảnh thực tế
+                </button>
+            </div>
+
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full p-6 bg-surface-bright/95 backdrop-blur-xl border-t border-surface-variant/30 z-50">
+            <button class="w-full bg-primary text-white py-4 rounded-[1.25rem] font-extrabold text-sm shadow-[0_15px_35px_rgba(0,105,71,0.35)] active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                Gửi Đánh Giá 
+                <span class="bg-white/20 px-2 py-0.5 rounded-md text-[10px] uppercase tracking-widest ml-1">+10 GP</span>
+            </button>
+        </div>
+
+    </div>
+</body>
+</html>
