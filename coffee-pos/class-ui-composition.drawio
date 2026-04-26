@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="fl0cgIX4QXjc7OVXwOBC">
-    <mxGraphModel dx="3535" dy="2058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2020" dy="1176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -50,7 +50,7 @@
           <mxGeometry height="37" width="281" y="155.8" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-16" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=33.142857142857146;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="UC_Sidebar" vertex="1">
-          <mxGeometry height="239.14285714285714" width="240" x="310" y="420" as="geometry" />
+          <mxGeometry height="239.14285714285714" width="240" x="355" y="380" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-17" parent="UplZXpRrrTlYR4R6ckJa-16" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+OnNavigate: Action&lt;string&gt;" vertex="1">
           <mxGeometry height="33" width="240" y="33.142857142857146" as="geometry" />
@@ -74,7 +74,7 @@
           <mxGeometry height="33" width="240" y="206.14285714285714" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-24" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36.8;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="UC_Billing" vertex="1">
-          <mxGeometry height="192.8" width="385" x="1677" y="357" as="geometry" />
+          <mxGeometry height="192.8" width="385" x="1650" y="357" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-25" parent="UplZXpRrrTlYR4R6ckJa-24" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+OnPayClicked: EventHandler" vertex="1">
           <mxGeometry height="37" width="385" y="36.8" as="geometry" />
@@ -131,7 +131,7 @@
           <mxGeometry height="37" width="330" y="155.8" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-43" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=light-dark(#eeeeee,#1f2020);strokeColor=light-dark(#999999,#cccccc);fontColor=light-dark(#333333,#cccccc);" value="UC_PaymentConfirm" vertex="1">
-          <mxGeometry height="168" width="191" x="1774" y="640" as="geometry" />
+          <mxGeometry height="168" width="191" x="1747" y="640" as="geometry" />
         </mxCell>
         <mxCell id="UplZXpRrrTlYR4R6ckJa-44" parent="UplZXpRrrTlYR4R6ckJa-43" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="+TotalAmount: decimal" vertex="1">
           <mxGeometry height="40" width="191" y="40" as="geometry" />
